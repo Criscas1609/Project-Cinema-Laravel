@@ -1,0 +1,38 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.seating-plan-container {
+    overflow: hidden;
+}
+
+.seating-plan {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.seating-plan td {
+    padding: 0;
+}
+
+.seating-plan button {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.seating-plan button.available {
+    background-color: #eee;
+}
+
+.seating-plan button.selected {
+    background-color: #007bff;
+    color: #fff;
+}
