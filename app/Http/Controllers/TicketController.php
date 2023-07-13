@@ -62,14 +62,17 @@ class TicketController extends Controller{
         $movie = Movie::whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($movieName) . '%'])->first();
         $client = Auth::user();
         $clientChair = [];
+        $total=0;
 
         foreach($tickets as $ticket){
             if($ticket->clientName == $client->name && $ticket->movieName == $movie->name){
                 $clientChair[] = $ticket->seat; 
+                $total = $total + $ticket->price;
+
             }
         }
 
-        return view('sell', ['movie' => $movie, 'chairs' => $clientChair, 'error' => null]);
+        return view('sell', ['movie' => $movie, 'chairs' => $clientChair, 'error' => null, 'total' => $total]);
     }
 
 

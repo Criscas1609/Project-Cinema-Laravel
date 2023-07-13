@@ -38,7 +38,7 @@
                                             <br><div class="mt-4 text-center">
                                                 <form method="post" action="/reservation/cancel">
                                                     @csrf
-                                                    <input type="hidden" name="chair" value="{{$movie->name}}">
+                                                    <input type="hidden" name="movieName" value="{{$movie->name}}">
                                                     <button type="submit" class="custom-button color-3">Cancelar reserva</button>  
                                                 </form>
                                             </div>
@@ -59,11 +59,12 @@
                           <div class="card-body">
                             <div class="gap-2 d-grid">
                             <div class="mb-4 form-outline">
-                                @if($chairs)
+                                @if($chairs && $total)
                                 <p class="pt-2 text-center" style="color: #eee">
                                     Hora: {{$movie->schedule}} <br>
                                     Sala: {{$movie->room}} <br>
-                                    Sillas: {{implode(', ', $chairs)}}
+                                    Sillas: {{implode(', ', $chairs)}}<br>
+                                    Total a pagar: ${{$total}} <br>
                                 </p>
                                 @endif
                               <form method="post" action="/return">

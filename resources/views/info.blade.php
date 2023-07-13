@@ -22,9 +22,14 @@
           <!-- As a heading -->
           <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-              <span class="mb-0 navbar-brand h1" style="color: #eee" >Peliculas</span>
+                <span class="mb-0 navbar-brand h1" style="color: #eee">Peliculas</span>
+                <form action="/change" method="get">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Actualizar información</button>
+                </form>
             </div>
-          </nav>
+        </nav>
+        
           <br>
           <div class="container mt-5">
             <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">

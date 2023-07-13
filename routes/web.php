@@ -56,6 +56,8 @@ Route::post('/reservation/complete', [TicketController::class, 'saveReservation'
 
 Route::post('/return',[MovieController::class, 'home']);
 
-Route::post('/change/password',[LoginController::class, 'changePassword']);
+Route::post('/update/user',[RegisterController::class, 'updateUser']);
+
+Route::get('/change',[RegisterController::class, 'getUser']);
 
 //route::
